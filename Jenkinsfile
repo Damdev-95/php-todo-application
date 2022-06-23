@@ -14,7 +14,7 @@ pipeline {
         stage ('Checkout Repo'){
             steps {
 
-                git branch: 'main', url: 'https://github.com/royalt1234/php-todo-for-Docker.git'
+                git branch: 'main', url: 'https://github.com/Damdev-95/php-todo-application.git'
             }
         }
 
