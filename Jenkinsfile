@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
 
-                       sh "docker build -t royalt/darey.io:${env.BRANCH_NAME}-${env.BUILD_NUMBER} ."
+                       sh "docker build -t damdav95/php-todo-app:${env.BRANCH_NAME}-${env.BUILD_NUMBER} ."
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
 
-                       sh "docker run --network php -p 8050:8000 -d royalt/darey.io:${env.BRANCH_NAME}-${env.BUILD_NUMBER} ."
+                       sh "docker run --network tooling_app_network -p 8050:8000 -d damdav95/php-todo-app:${env.BRANCH_NAME}-${env.BUILD_NUMBER} ."
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline {
                 script {
 
                     sh "curl --version"
-                    sh  "curl -I http://3.95.65.147:8050"
+                    sh  "curl -I http://18.212.3.199/:8050"
                 }
             }
         }
@@ -52,7 +52,7 @@ pipeline {
                 script {
             sh "docker login -u ${env.username} -p ${env.password}"
 
-            sh "docker push royalt/darey.io:${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
+            sh "docker push damdav95/php-todo-app:${env.BRANCH_NAME}-${env.BUILD_NUMBER}"
                 }
             }
         }
