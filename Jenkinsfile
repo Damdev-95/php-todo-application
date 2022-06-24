@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
 
-                       sh "docker run --network tooling_app_network -p 8050:8000 -d damdav95/php-todo-app:${env.BRANCH_NAME}-${env.BUILD_NUMBER} ."
+                       sh "docker run --network tooling_app_network -p 8099:8000 -d damdav95/php-todo-app:${env.BRANCH_NAME}-${env.BUILD_NUMBER} ."
                 }
             }
         }
@@ -41,7 +41,7 @@ pipeline {
                 script {
 
                     sh "curl --version"
-                    sh  "curl -I http://18.212.3.199:8050"
+                    sh  "curl -I http://18.212.3.199:8099"
                 }
             }
         }
