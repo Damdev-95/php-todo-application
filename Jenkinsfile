@@ -41,7 +41,7 @@ pipeline {
                 script {
 
                     sh "curl --version"
-                    sh  "curl -I http://18.212.3.199:8099"
+                    sh "curl -I http://18.212.3.199:8099"
                 }
             }
         }
